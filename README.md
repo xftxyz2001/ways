@@ -8,6 +8,14 @@
 - [Win11启用经典右键菜单](bat/Win11%E5%90%AF%E7%94%A8%E7%BB%8F%E5%85%B8%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95.bat)
 
 
+## 邮箱
+- [QQ邮箱](https://mail.qq.com/)
+- [网易163邮箱](https://mail.163.com/)
+- [校园邮](https://edu.icoremail.net/)
+- [Gmail](https://mail.google.com/)
+- [临时邮箱](http://24mail.chacuo.net/)
+
+
 ## 加速器
 - LetsVPN
   - [下载链接（推荐使用浏览器访问）](https://github.com/LetsGo666/LetsGo_1)
@@ -37,6 +45,13 @@
   ```
 
 
+## 前端在线工具
+- [fly63前端](https://www.fly63.com/)
+- [码工具](https://www.matools.com/)
+- [QY在线工具网](https://tool.nbqykj.cn/)
+
+
 ## 小工具
 - [Snipaste 截图+贴图](https://zh.snipaste.com/)
+- [listary 文件搜索](https://www.listary.com/)
 
