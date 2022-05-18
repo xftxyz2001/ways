@@ -54,4 +54,4 @@
 ## 小工具
 - [Snipaste 截图+贴图](https://zh.snipaste.com/)
 - [listary 文件搜索](https://www.listary.com/)
-
+- [电子日记本(EDiary)](http://www.haoxg.net/)
