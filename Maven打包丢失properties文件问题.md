@@ -1,3 +1,5 @@
+相关的文件被忽略
+修改pom.xml添加下面的代码
 ```xml
 <build>
     <resources>
