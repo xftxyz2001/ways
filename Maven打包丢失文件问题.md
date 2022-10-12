@@ -1,0 +1,15 @@
+相关的文件被忽略
+修改pom.xml添加下面的代码
+```xml
+<build>
+    <resources>
+        <resource>
+            <directory>src/main/java</directory>
+            <includes>
+                <include>**/*.xml</include>
+            </includes>
+            <filtering>false</filtering>
+        </resource>
+    </resources>
+</build>
+```
