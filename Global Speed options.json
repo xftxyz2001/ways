@@ -1,0 +1,344 @@
+{
+    "common": {
+        "audioFx": {
+            "delay": 0,
+            "eq": {
+                "enabled": false,
+                "factor": 1,
+                "values": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ]
+            },
+            "pitch": 0,
+            "volume": 1
+        },
+        "backdropFx": {
+            "filters": [
+                {
+                    "name": "sepia",
+                    "value": 0
+                },
+                {
+                    "name": "hueRotate",
+                    "value": 0
+                },
+                {
+                    "name": "grayscale",
+                    "value": 0
+                },
+                {
+                    "name": "contrast",
+                    "value": 1
+                },
+                {
+                    "name": "brightness",
+                    "value": 1
+                },
+                {
+                    "name": "saturate",
+                    "value": 1
+                },
+                {
+                    "name": "invert",
+                    "value": 0
+                },
+                {
+                    "name": "blur",
+                    "value": 0
+                },
+                {
+                    "name": "opacity",
+                    "value": 1
+                }
+            ],
+            "transforms": [
+                {
+                    "name": "scaleX",
+                    "value": 1
+                },
+                {
+                    "name": "scaleY",
+                    "value": 1
+                },
+                {
+                    "name": "translateX",
+                    "value": 0
+                },
+                {
+                    "name": "translateY",
+                    "value": 0
+                },
+                {
+                    "name": "rotateX",
+                    "value": 0
+                },
+                {
+                    "name": "rotateY",
+                    "value": 0
+                },
+                {
+                    "name": "rotateZ",
+                    "value": 0
+                }
+            ]
+        },
+        "elementFx": {
+            "filters": [
+                {
+                    "name": "sepia",
+                    "value": 0
+                },
+                {
+                    "name": "hueRotate",
+                    "value": 0
+                },
+                {
+                    "name": "grayscale",
+                    "value": 0
+                },
+                {
+                    "name": "contrast",
+                    "value": 1
+                },
+                {
+                    "name": "brightness",
+                    "value": 1
+                },
+                {
+                    "name": "saturate",
+                    "value": 1
+                },
+                {
+                    "name": "invert",
+                    "value": 0
+                },
+                {
+                    "name": "blur",
+                    "value": 0
+                },
+                {
+                    "name": "opacity",
+                    "value": 1
+                }
+            ],
+            "transforms": [
+                {
+                    "name": "scaleX",
+                    "value": 1
+                },
+                {
+                    "name": "scaleY",
+                    "value": 1
+                },
+                {
+                    "name": "translateX",
+                    "value": 0
+                },
+                {
+                    "name": "translateY",
+                    "value": 0
+                },
+                {
+                    "name": "rotateX",
+                    "value": 0
+                },
+                {
+                    "name": "rotateY",
+                    "value": 0
+                },
+                {
+                    "name": "rotateZ",
+                    "value": 0
+                }
+            ]
+        },
+        "enabled": true,
+        "enabledLatestViaPopup": true,
+        "lastSpeed": 3.9,
+        "speed": 1
+    },
+    "darkTheme": true,
+    "firstUse": 1663771622305,
+    "hideMediaView": null,
+    "keybinds": [
+        {
+            "adjustMode": 2,
+            "command": "adjustSpeed",
+            "enabled": true,
+            "greedy": true,
+            "id": "9980691233",
+            "key": {
+                "altKey": false,
+                "code": "KeyX",
+                "ctrlKey": false,
+                "metaKey": false,
+                "shiftKey": false
+            },
+            "valueNumberAlt": -0.1
+        },
+        {
+            "adjustMode": 1,
+            "command": "adjustSpeed",
+            "enabled": true,
+            "greedy": true,
+            "id": "2663973578",
+            "key": {
+                "altKey": false,
+                "code": "KeyZ",
+                "ctrlKey": false,
+                "metaKey": false,
+                "shiftKey": false
+            },
+            "valueNumber": 1
+        },
+        {
+            "adjustMode": 2,
+            "command": "adjustSpeed",
+            "enabled": true,
+            "greedy": true,
+            "id": "4868920777",
+            "key": {
+                "altKey": false,
+                "code": "KeyC",
+                "ctrlKey": false,
+                "metaKey": false,
+                "shiftKey": false
+            },
+            "spacing": 1,
+            "valueNumberAlt": 0.1
+        },
+        {
+            "command": "setPin",
+            "enabled": true,
+            "greedy": true,
+            "id": "5644464088",
+            "key": "KeyQ",
+            "valueState": "toggle"
+        },
+        {
+            "command": "setState",
+            "enabled": true,
+            "greedy": true,
+            "id": "3488943231",
+            "key": {
+                "code": "KeyQ",
+                "shiftKey": true
+            },
+            "spacing": 2,
+            "valueState": "toggle"
+        },
+        {
+            "command": "seek",
+            "enabled": true,
+            "greedy": true,
+            "id": "3995259625",
+            "key": {
+                "altKey": false,
+                "code": "KeyA",
+                "ctrlKey": false,
+                "metaKey": false,
+                "shiftKey": true
+            },
+            "valueNumber": -5
+        },
+        {
+            "command": "seek",
+            "enabled": true,
+            "greedy": true,
+            "id": "3483291149",
+            "key": {
+                "altKey": false,
+                "code": "KeyD",
+                "ctrlKey": false,
+                "metaKey": false,
+                "shiftKey": true
+            },
+            "spacing": 1,
+            "valueNumber": 10
+        },
+        {
+            "command": "fullscreen",
+            "enabled": true,
+            "greedy": true,
+            "id": "5383818226",
+            "key": {
+                "code": "KeyF",
+                "shiftKey": true
+            },
+            "spacing": 2,
+            "valueBool": true
+        },
+        {
+            "command": "setMark",
+            "enabled": true,
+            "greedy": true,
+            "id": "862428858",
+            "key": {
+                "code": "KeyW",
+                "shiftKey": true
+            },
+            "valueString": "mark1"
+        },
+        {
+            "command": "seekMark",
+            "enabled": true,
+            "greedy": true,
+            "id": "5876033352",
+            "key": "KeyW",
+            "valueString": "mark1"
+        },
+        {
+            "command": "toggleLoop",
+            "enabled": false,
+            "greedy": true,
+            "id": "4052201397",
+            "key": "KeyR",
+            "spacing": 2,
+            "valueString": "mark1"
+        },
+        {
+            "adjustMode": 3,
+            "command": "adjustFilter",
+            "enabled": false,
+            "filterOption": "invert",
+            "filterTarget": "both",
+            "greedy": true,
+            "id": "7833655148",
+            "key": {
+                "code": "KeyE"
+            },
+            "valueCycle": [
+                0,
+                1
+            ]
+        },
+        {
+            "adjustMode": 3,
+            "command": "adjustFilter",
+            "enabled": false,
+            "filterOption": "grayscale",
+            "filterTarget": "backdrop",
+            "greedy": true,
+            "id": "9118764728",
+            "key": {
+                "code": "KeyE",
+                "shiftKey": true
+            },
+            "spacing": 2,
+            "valueCycle": [
+                0,
+                1
+            ]
+        }
+    ],
+    "version": 10
+}
