@@ -3,7 +3,7 @@ from PyPDF2 import PdfReader
 # 每个书签的索引格式
 # {'/Title': '书签名', '/Page': '指向的目标页数', '/Type': '类型'}
 
-filename = '1'  # 要提取目录的pdf文件名（不包含后缀）
+filename = '文件名'  # 要提取目录的pdf文件名（不包含后缀）
 directory_str = ''
 
 
@@ -11,8 +11,8 @@ def bookmark_listhandler(list, level=1):
     global directory_str
     for message in list:
         if isinstance(message, dict):
-            directory_str = directory_str + '#' * \
-                level + message['/Title'] + '\n'
+            directory_str = directory_str + '#' * + \
+                ' ' + level + message['/Title'] + '\n'
         else:
             bookmark_listhandler(message, level+1)
 
