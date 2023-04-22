@@ -11,8 +11,8 @@ def bookmark_listhandler(list, level=1):
     global directory_str
     for message in list:
         if isinstance(message, dict):
-            directory_str = directory_str + '#' * + \
-                ' ' + level + message['/Title'] + '\n'
+            directory_str += '#' * level
+            directory_str += ' ' + message['/Title'] + '\n'
         else:
             bookmark_listhandler(message, level+1)
 
