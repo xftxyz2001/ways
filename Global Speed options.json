@@ -1,26 +1,221 @@
 {
-    "common": {
-        "audioFx": {
-            "delay": 0,
-            "eq": {
-                "enabled": false,
-                "factor": 1,
-                "values": [
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0
-                ]
+    "version": 10,
+    "firstUse": 1685777233885,
+    "keybinds": [
+        {
+            "id": "5326826691",
+            "command": "adjustSpeed",
+            "enabled": true,
+            "greedy": true,
+            "adjustMode": 1,
+            "key": {
+                "ctrlKey": false,
+                "altKey": false,
+                "shiftKey": false,
+                "metaKey": false,
+                "code": "KeyZ"
             },
-            "pitch": 0,
-            "volume": 1
+            "valueNumber": 1,
+            "spacing": 0
         },
+        {
+            "id": "4382496732",
+            "command": "adjustSpeed",
+            "enabled": true,
+            "greedy": true,
+            "adjustMode": 2,
+            "key": {
+                "ctrlKey": false,
+                "altKey": false,
+                "shiftKey": false,
+                "metaKey": false,
+                "code": "KeyX"
+            },
+            "valueNumberAlt": -0.1
+        },
+        {
+            "id": "6419489814",
+            "command": "adjustSpeed",
+            "enabled": true,
+            "greedy": true,
+            "adjustMode": 2,
+            "key": {
+                "ctrlKey": false,
+                "altKey": false,
+                "shiftKey": false,
+                "metaKey": false,
+                "code": "KeyC"
+            },
+            "valueNumberAlt": 0.1,
+            "spacing": 1
+        },
+        {
+            "id": "4187088345",
+            "command": "setPin",
+            "enabled": false,
+            "greedy": true,
+            "valueState": "toggle",
+            "key": "KeyQ"
+        },
+        {
+            "id": "1179942868",
+            "command": "setState",
+            "enabled": false,
+            "greedy": true,
+            "valueState": "toggle",
+            "key": {
+                "code": "KeyQ",
+                "shiftKey": true
+            },
+            "spacing": 2
+        },
+        {
+            "id": "4867609784",
+            "command": "seek",
+            "enabled": true,
+            "greedy": true,
+            "valueNumber": -5,
+            "key": {
+                "ctrlKey": false,
+                "altKey": false,
+                "shiftKey": false,
+                "metaKey": false,
+                "code": "KeyA"
+            }
+        },
+        {
+            "id": "3755036605",
+            "command": "seek",
+            "enabled": true,
+            "greedy": true,
+            "valueNumber": 10,
+            "key": {
+                "ctrlKey": false,
+                "altKey": false,
+                "shiftKey": false,
+                "metaKey": false,
+                "code": "KeyD"
+            },
+            "spacing": 1
+        },
+        {
+            "id": "6491765653",
+            "command": "seek",
+            "enabled": true,
+            "greedy": true,
+            "valueNumber": -0.041,
+            "key": {
+                "ctrlKey": false,
+                "altKey": false,
+                "shiftKey": true,
+                "metaKey": false,
+                "code": "KeyA"
+            },
+            "valueBool3": true
+        },
+        {
+            "id": "8308844654",
+            "command": "seek",
+            "enabled": true,
+            "greedy": true,
+            "valueNumber": 0.041,
+            "key": {
+                "ctrlKey": false,
+                "altKey": false,
+                "shiftKey": true,
+                "metaKey": false,
+                "code": "KeyD"
+            },
+            "spacing": 1,
+            "valueBool3": true
+        },
+        {
+            "id": "6752238118",
+            "command": "fullscreen",
+            "enabled": true,
+            "greedy": true,
+            "key": {
+                "shiftKey": true,
+                "code": "KeyF"
+            },
+            "valueBool": true,
+            "spacing": 2
+        },
+        {
+            "id": "5925171300",
+            "command": "setMark",
+            "enabled": true,
+            "greedy": true,
+            "valueString": "mark1",
+            "key": {
+                "ctrlKey": false,
+                "altKey": false,
+                "shiftKey": false,
+                "metaKey": false,
+                "code": "KeyS"
+            }
+        },
+        {
+            "id": "5284362716",
+            "command": "seekMark",
+            "enabled": true,
+            "greedy": true,
+            "valueString": "mark1",
+            "key": {
+                "ctrlKey": false,
+                "altKey": false,
+                "shiftKey": true,
+                "metaKey": false,
+                "code": "KeyS"
+            }
+        },
+        {
+            "id": "8656624321",
+            "command": "toggleLoop",
+            "enabled": true,
+            "greedy": true,
+            "valueString": "mark1",
+            "key": "KeyR",
+            "spacing": 2
+        },
+        {
+            "id": "6866337011",
+            "command": "adjustFilter",
+            "filterOption": "invert",
+            "enabled": false,
+            "greedy": true,
+            "filterTarget": "both",
+            "adjustMode": 3,
+            "key": {
+                "code": "KeyE"
+            },
+            "valueCycle": [
+                0,
+                1
+            ]
+        },
+        {
+            "id": "1174293069",
+            "command": "adjustFilter",
+            "filterOption": "grayscale",
+            "enabled": false,
+            "greedy": true,
+            "filterTarget": "backdrop",
+            "adjustMode": 3,
+            "key": {
+                "code": "KeyE",
+                "shiftKey": true
+            },
+            "valueCycle": [
+                0,
+                1
+            ],
+            "spacing": 2
+        }
+    ],
+    "common": {
+        "speed": 1,
+        "enabled": true,
         "backdropFx": {
             "filters": [
                 {
@@ -161,184 +356,32 @@
                 }
             ]
         },
-        "enabled": true,
-        "enabledLatestViaPopup": true,
-        "lastSpeed": 3.9,
-        "speed": 1
-    },
-    "darkTheme": true,
-    "firstUse": 1663771622305,
-    "hideMediaView": null,
-    "keybinds": [
-        {
-            "adjustMode": 2,
-            "command": "adjustSpeed",
-            "enabled": true,
-            "greedy": true,
-            "id": "9980691233",
-            "key": {
-                "altKey": false,
-                "code": "KeyX",
-                "ctrlKey": false,
-                "metaKey": false,
-                "shiftKey": false
-            },
-            "valueNumberAlt": -0.1
-        },
-        {
-            "adjustMode": 1,
-            "command": "adjustSpeed",
-            "enabled": true,
-            "greedy": true,
-            "id": "2663973578",
-            "key": {
-                "altKey": false,
-                "code": "KeyZ",
-                "ctrlKey": false,
-                "metaKey": false,
-                "shiftKey": false
-            },
-            "valueNumber": 1
-        },
-        {
-            "adjustMode": 2,
-            "command": "adjustSpeed",
-            "enabled": true,
-            "greedy": true,
-            "id": "4868920777",
-            "key": {
-                "altKey": false,
-                "code": "KeyC",
-                "ctrlKey": false,
-                "metaKey": false,
-                "shiftKey": false
-            },
-            "spacing": 1,
-            "valueNumberAlt": 0.1
-        },
-        {
-            "command": "setPin",
-            "enabled": true,
-            "greedy": true,
-            "id": "5644464088",
-            "key": "KeyQ",
-            "valueState": "toggle"
-        },
-        {
-            "command": "setState",
-            "enabled": true,
-            "greedy": true,
-            "id": "3488943231",
-            "key": {
-                "code": "KeyQ",
-                "shiftKey": true
-            },
-            "spacing": 2,
-            "valueState": "toggle"
-        },
-        {
-            "command": "seek",
-            "enabled": true,
-            "greedy": true,
-            "id": "3995259625",
-            "key": {
-                "altKey": false,
-                "code": "KeyA",
-                "ctrlKey": false,
-                "metaKey": false,
-                "shiftKey": true
-            },
-            "valueNumber": -5
-        },
-        {
-            "command": "seek",
-            "enabled": true,
-            "greedy": true,
-            "id": "3483291149",
-            "key": {
-                "altKey": false,
-                "code": "KeyD",
-                "ctrlKey": false,
-                "metaKey": false,
-                "shiftKey": true
-            },
-            "spacing": 1,
-            "valueNumber": 10
-        },
-        {
-            "command": "fullscreen",
-            "enabled": true,
-            "greedy": true,
-            "id": "5383818226",
-            "key": {
-                "code": "KeyF",
-                "shiftKey": true
-            },
-            "spacing": 2,
-            "valueBool": true
-        },
-        {
-            "command": "setMark",
-            "enabled": true,
-            "greedy": true,
-            "id": "862428858",
-            "key": {
-                "code": "KeyW",
-                "shiftKey": true
-            },
-            "valueString": "mark1"
-        },
-        {
-            "command": "seekMark",
-            "enabled": true,
-            "greedy": true,
-            "id": "5876033352",
-            "key": "KeyW",
-            "valueString": "mark1"
-        },
-        {
-            "command": "toggleLoop",
-            "enabled": false,
-            "greedy": true,
-            "id": "4052201397",
-            "key": "KeyR",
-            "spacing": 2,
-            "valueString": "mark1"
-        },
-        {
-            "adjustMode": 3,
-            "command": "adjustFilter",
-            "enabled": false,
-            "filterOption": "invert",
-            "filterTarget": "both",
-            "greedy": true,
-            "id": "7833655148",
-            "key": {
-                "code": "KeyE"
-            },
-            "valueCycle": [
-                0,
-                1
-            ]
-        },
-        {
-            "adjustMode": 3,
-            "command": "adjustFilter",
-            "enabled": false,
-            "filterOption": "grayscale",
-            "filterTarget": "backdrop",
-            "greedy": true,
-            "id": "9118764728",
-            "key": {
-                "code": "KeyE",
-                "shiftKey": true
-            },
-            "spacing": 2,
-            "valueCycle": [
-                0,
-                1
-            ]
+        "audioFx": {
+            "pitch": 0,
+            "volume": 1,
+            "delay": 0,
+            "eq": {
+                "enabled": false,
+                "factor": 1,
+                "values": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ]
+            }
         }
-    ],
-    "version": 10
+    },
+    "language": "zh_CN",
+    "darkTheme": true,
+    "hideBadge": false,
+    "pinByDefault": true,
+    "speedPresetPadding": 0,
+    "hideMediaView": null
 }
