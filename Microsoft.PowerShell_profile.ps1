@@ -1,5 +1,7 @@
 New-Alias -Name git -Value "C:\Program Files\Git\bin\git.exe"
 Import-Module posh-git
+Import-Module oh-my-posh
+Set-Theme Paradox
 
 # Shows navigable menu of all options when hitting Tab
 Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
