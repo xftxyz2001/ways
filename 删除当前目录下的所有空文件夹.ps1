@@ -1,0 +1,1 @@
+Get-ChildItem -Path . -Directory -Recurse | Where-Object { $_.GetFileSystemInfos().Count -eq 0 } | Remove-Item -Recurse
