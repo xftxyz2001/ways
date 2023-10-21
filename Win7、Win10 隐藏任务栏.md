@@ -31,7 +31,7 @@
 
 
 - [参考资料](https://zyhh.me/delphi/taskbarhider.html)
-- [下载链接](https://zyhh.me/download/TaskBarHider.zip)
+- [下载链接](https://txyz.lanzoue.com/iyarg1cf1ioh)
 
 TaskbarHider.ini
 ```ini
