@@ -4,9 +4,6 @@
 首先去官网下载对应的版本
 ![image-20220402212027923](https://billy.taoxiaoxin.club//img/202204022120003.png)
 
-附蓝奏云地址：https://txyz.lanzouj.com/iUHAc0c7hk7e
-密码:5dve
-
 然后双击下一步下一步，选择自己的安装路径即可
 ![image-20220402212153056](https://billy.taoxiaoxin.club//img/202204022121112.png)
 
