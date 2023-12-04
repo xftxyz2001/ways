@@ -33,9 +33,17 @@ module com.example.demo {
 
 ### 方法3：使用引导类
 使用一种引导类来代理启动 JavaFX 应用。举个例子，现在笔者将 方法 2 中使用 IntelliJ IDEA 新建的 JavaFX 示例项目中的 module-info.java 删除。此时运行此项目应该会报前述的错误。现在，只需要编写一个引导类调用 JavaFX 入口 main 方法即可消除这个错误。
-```java
-package com.example.demo;
 
+```java
+public class HelloApplication extends Application { // 注意继承 Application 的类的访问修饰符必须是 public
+    @Override
+    public void start(Stage stage) throws Exception {
+        // ...
+    }
+}
+```
+
+```java
 public class JavaFXBootstrap {
     // 方法3-1
     public static void main(String[] args) {
