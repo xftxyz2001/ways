@@ -5,8 +5,8 @@ from PyQt6.QtCore import pyqtSignal, Qt
 class RightClickButton(QPushButton):
     rightClicked = pyqtSignal()
 
-    def __init__(self, text, parent=None):
-        super().__init__(text, parent)
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
 
     def mousePressEvent(self, event):
         if event.buttons() == Qt.MouseButton.LeftButton:
