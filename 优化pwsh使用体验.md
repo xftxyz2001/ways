@@ -1,3 +1,10 @@
+# 0. 下载并安装PowerShell
+https://github.com/PowerShell/PowerShell/releases
+
+![1702905508334](image/优化pwsh使用体验/1702905508334.png)
+
+
+
 # 1. 安装模块
 ```powershell
 Install-Module posh-git -Scope CurrentUser
