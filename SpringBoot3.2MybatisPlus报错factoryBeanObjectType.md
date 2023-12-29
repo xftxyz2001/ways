@@ -48,3 +48,6 @@ MybatisPlus版本中依赖的mybatis-spring版本过低，不兼容spring-boot3.
     <relativePath/> <!-- lookup parent from repository -->
 </parent>
 ```
+
+---
+- [springboot由3.1.5升级到3.2.0 报Invalid value type for attribute ‘factoryBeanObjectType‘: java.lang.String](https://blog.csdn.net/u011410254/article/details/134611035)
