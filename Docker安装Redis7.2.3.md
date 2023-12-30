@@ -18,27 +18,13 @@ touch ~/redis7.2.3/redis.conf
 
 
 ## 三、启动redis容器并挂载配置文件、数据持久化
-启动脚本 redis7.2.3.sh 脚本内容如下：
-```bash
-#!/bin/sh
-docker run \
--p 6379:6379 \
---name redis \
---privileged=true \
---restart unless-stopped \
--v ~/redis7.2.3/data:/data \
--v ~/redis7.2.3/redis.conf:/etc/redis/redis.conf \
--d redis:7.2.3 \
-redis-server /etc/redis/redis.conf \
---appendonly yes \
---requirepass 123456
-```
+启动脚本 [redis7.2.3.sh](./redis7.2.3.sh)
 ```bash
 # 执行脚本 启动镜像
 sh redis7.2.3.sh
 
 # 查看是否启动成功
-docker ps -a
+docker ps
 ```
 
 

@@ -7,7 +7,7 @@ docker pull mysql:8.2.0
 docker run -p 3306:3306 --name mysql -e MYSQL_ROOT_PASSWORD=123456 -d mysql:8.2.0
 
 # 查看是否启动成功
-docker ps -a
+docker ps
 ```
 
 
@@ -29,27 +29,13 @@ docker rm mysql
 
 
 ## 四、启动mysql容器并挂载配置文件、数据持久化
-启动脚本 mysql8.2.0.sh 脚本内容如下：
-```bash
-#!/bin/sh
-docker run \
--p 3306:3306 \
---name mysql \
---privileged=true \
---restart unless-stopped \
--v ~/mysql8.2.0/conf.d:/etc/mysql/conf.d \
--v ~/mysql8.2.0/log:/var/log/mysql \
--v ~/mysql8.2.0/data:/var/lib/mysql \
--v /etc/localtime:/etc/localtime \
--e MYSQL_ROOT_PASSWORD=123456 \
--d mysql:8.2.0
-```
+启动脚本 [mysql8.2.0.sh](./mysql8.2.0.sh)
 ```bash
 # 执行脚本 启动镜像
 sh mysql8.2.0.sh
 
 # 查看是否启动成功
-docker ps -a
+docker ps
 ```
 
 
