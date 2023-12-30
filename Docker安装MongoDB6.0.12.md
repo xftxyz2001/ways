@@ -42,4 +42,3 @@ docker start mongodb
 ---
 - [docker安装mongoDB详细步骤](https://blog.csdn.net/qhl_904463348/article/details/120284218)
 - [docker-hub/mongo](https://hub.docker.com/_/mongo)
-- 
