@@ -1,7 +1,7 @@
 #!/bin/sh
 docker run \
---name=mongodb \
---restart=unless-stopped \
+--name mongodb \
+--restart unless-stopped \
 -p 27017:27017 \
 --privileged=true \
 -v ~/mongo6.0.12/data:/data/db \

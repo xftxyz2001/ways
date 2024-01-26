@@ -1,8 +1,8 @@
 #!/bin/sh
 docker run \
 --name redis \
--p 6379:6379 \
 --restart unless-stopped \
+-p 6379:6379 \
 --privileged=true \
 -v ~/redis7.2.3/data:/data \
 -v ~/redis7.2.3/redis.conf:/etc/redis/redis.conf \

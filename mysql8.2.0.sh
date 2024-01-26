@@ -1,8 +1,8 @@
 #!/bin/sh
 docker run \
 --name mysql \
--p 3306:3306 \
 --restart unless-stopped \
+-p 3306:3306 \
 --privileged=true \
 -v ~/mysql8.2.0/conf.d:/etc/mysql/conf.d \
 -v ~/mysql8.2.0/log:/var/log/mysql \
