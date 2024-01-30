@@ -1,5 +1,5 @@
 import requests
-from bs4 import BeautifulSoup
+from lxml import etree
 import time
 import random
 
@@ -17,37 +17,28 @@ headers = {
 with open("novel.md", "w", encoding="utf-8") as f:
     while url:
         # 打印URL
-        print(f"Trying URL: {url}")
+        print(f"try: {url}")
 
         # 获取页面内容
         response = requests.get(url, headers=headers)
-        soup = BeautifulSoup(response.content, "html.parser")
-
-        # 获取编码方式
-        charset = soup.select_one("meta[charset]")["charset"]
-
-        # 使用正确的编码解码
-        html = response.content.decode(charset)
-
-        # 使用BeautifulSoup解析HTML
-        soup = BeautifulSoup(html, "html.parser")
+        html = etree.HTML(response.content)
 
         # 提取标题和内容
-        title = soup.select_one('//*[@id="post"]/h1').text
-        content_src = soup.select('//*[@id="post"]/div[2]/p')
+        title = html.xpath('//*[@id="post"]/h1/text()')[0]
+        content_src = html.xpath('//*[@id="post"]/div[2]/p/text()')
 
         # 去除最开头的三个和结束的7个
         content_src = content_src[3:-7]
 
         # 获取text
-        content = "\n".join([p.text for p in content_src])
+        content = "\n".join(content_src)
 
         # 写入文件
         f.write(f"## {title}\n\n{content}\n\n")
 
         # 找到下一页的链接
-        next_page = soup.select_one('//*[@id="post"]/div[3]/div[2]/a')
-        url = next_page["href"] if next_page else None
+        next_page = html.xpath('//*[@id="post"]/div[3]/div[2]/a/@href')
+        url = next_page[0] if next_page else None
 
         # 暂停1-3秒
         time.sleep(random.randint(1, 3))
