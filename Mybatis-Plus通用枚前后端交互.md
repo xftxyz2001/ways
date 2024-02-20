@@ -112,6 +112,6 @@ public class User implements Serializable {
 ### 其余方式
 其它方式，包括 `GET请求` 、 `POST请求(application/x-www-form-urlencoded)方式` 、 `POST请求(multipart/form-data)方式` 不走 `jackson` 反序列化逻辑（默认使用枚举实例 `name()` 值做匹配 **区分大小写**）
 
+
 ---
-- [示例代码](./mybatis-plus-enums-demo/)
 - [参考文章（详细，含源码）](https://blog.csdn.net/ory001/article/details/124515027)
