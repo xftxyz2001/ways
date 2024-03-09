@@ -29,9 +29,9 @@
 
 > [最大路径长度限制](https://learn.microsoft.com/zh-cn/windows/win32/fileio/maximum-file-path-limitation?tabs=registry)
 
-
-## 验证
 打开 命令行 输入 `python -V`，显示版本号即安装成功。
+
+[更换pip源](./pipindexurl.bat)
 
 
 ## 链接
