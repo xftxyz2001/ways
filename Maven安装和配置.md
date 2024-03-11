@@ -23,14 +23,14 @@
 > 缺省为 `${user.home}/.m2/repository` 即 `C:\Users\<username>\.m2\repository`
 
 
-## 配置阿里云镜像（非必须）
+## 配置[阿里云镜像](https://developer.aliyun.com/mvn/guide)（非必须）
 修改 `<DIR>\conf\settings.xml` 文件，在 `<mirrors>` 标签下添加 `<mirror>` 标签，如：
 ```xml
 <mirror>
-    <id>alimaven</id>
-    <name>aliyun maven</name>
-    <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
-    <mirrorOf>central</mirrorOf>
+    <id>aliyunmaven</id>
+    <mirrorOf>*</mirrorOf>
+    <name>阿里云公共仓库</name>
+    <url>https://maven.aliyun.com/repository/public</url>
 </mirror>
 ```
 
