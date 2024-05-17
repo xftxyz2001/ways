@@ -26,3 +26,6 @@
 
 到 Release 中下载 .zip 包，然后在任何 JetBrains IDE 中点击 “File -> Settings...”，打开设置，选择“Plugins”标签，然后点击齿轮图标，再点击“Install Plugin from Disk...”：
 ![1715926014689](image/Win11微软拼音输入法下JetBrainsIDEShiftF6失效问题/1715926014689.png)
+
+---
+- [解决 Win11 微软拼音输入法下 JetBrains IDE Shift+F6 失效的问题 - Eslzzyl - 博客园](https://www.cnblogs.com/eslzzyl/p/18146945)
