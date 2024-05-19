@@ -14,6 +14,7 @@
 | ---------------------------------- | ----------------------- |
 | Chinese (Simplified) Language Pack | 中文语言包              |
 | Smart Input                        | 自动切换输入法          |
+| Imefix                             | 输入法修复              |
 | MybatisX                           | Mybatis代码提示插件     |
 | Maven Helper                       | maven依赖查看           |
 | VSCode Theme                       | VSCode主题              |
