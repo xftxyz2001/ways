@@ -1,0 +1,2 @@
+- [SMS-Activate是在线接受短信的虚拟号码服务](https://sms-activate.org/cn)
+- [首页-北美号码接码 北美验证码号码](https://sms.qisms.com/index)
