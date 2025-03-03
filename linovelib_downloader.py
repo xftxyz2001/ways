@@ -26,7 +26,8 @@ class LinovelibCrawler:
         self.headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 Edg/133.0.0.0"
         }
-        self.min_request_interval = 3  # 两次请求的最小间隔
+        self.min_request_interval = 2  # 两次请求的最小间隔
+        self.request_interval = self.min_request_interval
         self.last_request_time = time.time() - self.min_request_interval
         self.max_retry = 3  # 最大重试次数
 
@@ -39,8 +40,8 @@ class LinovelibCrawler:
 
         # 距离上次请求时间的时间
         time_since_last_request = time.time() - self.last_request_time
-        if time_since_last_request < self.min_request_interval:
-            time.sleep(self.min_request_interval - time_since_last_request)
+        if time_since_last_request < self.request_interval:
+            time.sleep(self.request_interval - time_since_last_request)
         self.last_request_time = time.time()
 
         for attempt in range(self.max_retry):
@@ -51,15 +52,17 @@ class LinovelibCrawler:
                 # return etree.HTML(response.text)
 
                 self.driver.get(url)
-                time.sleep(2)  # 等待2秒，以便页面加载完全
+                time.sleep(self.request_interval)  # 等待，以便页面加载完全
                 return etree.HTML(self.driver.page_source)
+            # （內容加載失敗！請刷新或更換瀏覽器）
             except Exception as e:
                 print(f"请求页面失败: {e}")
+                if self.request_interval < 10:
+                    self.request_interval *= 2
                 if attempt < 2:
-                    print(f"将在 {5 * (attempt + 1)} 秒后重试...")
-                    time.sleep(5 * (attempt + 1))
+                    print(f"将在 {self.request_interval} 秒后重试...")
                 else:
-                    print("已达到最大重试次数，程序退出...")
+                    print("已达到最大重试次数，程序即将退出...")
                     exit()
 
     # 解析章节
@@ -99,53 +102,62 @@ class LinovelibCrawler:
             volume_list.append(volume)
         self.catalog = volume_list
 
+    # 解析一页小说
+    def parse_page(self, tree):
+        # 检查是否有字体样式加密，并记录加密的p
+        has_font_style = False
+        if tree.xpath('//head/script[contains(text(),"adoptedStyleSheets")]'):
+            has_font_style = True
+            # 获取#TextContent p:nth-last-of-type(2)
+            # p_last2 = tree.xpath('//div[@id="TextContent"]/p[last()-1]')[0]
+            p_last2 = tree.xpath('//div[@id="TextContent"]/p')[-2]
+            content_of_p_last2 = ""
+
+        contents = []
+        # 处理TextContent中的p br img标签
+        elements = tree.xpath('//div[@id="TextContent"]/*')
+        for element in elements:
+            if element.tag == "p":
+                if has_font_style and element == p_last2:
+                    contents.append(content_of_p_last2)
+                    continue
+                contents.append("".join(element.xpath("text()")))
+            elif element.tag == "br":
+                contents.append("\n")
+            elif element.tag == "img":
+                img_src = element.get("data-src") or element.get("src")
+                contents.append(f"![image]({img_src})\n\n")
+
+        return "\n".join(contents)
+
     # 解析章节内容
-    def parse_content(self, tree):
-        # mlfy_main_text = tree.xpath('//div[@id="mlfy-main-text"]')
-        # chapter_name = mlfy_main_text.xpath('/h1/text()')[0]
-        contents = ""
+    def parse_chapter(self, tree):
+        contents = []
         while True:
-            content = tree.xpath('//div[@id="TextContent"]//text()')
-            contents += "\n".join(content) + "\n\n"
-            # next_page = tree.xpath('//div[@class="mlfy-page"]/a[5]/@href')[0]
+            contents.append(self.parse_page(tree))
+
             next_page = tree.xpath('//div[@class="mlfy_page"]/a[5]/@href')[0]
             # 如果下一页链接/后面不存在下划线则说明章节结束
             if next_page.split("/")[-1].find("_") == -1:
                 break
-            # new_url = next_page
-            # if not new_url.startswith("http"):
-            #     new_url = self.base_url + new_url
-            # tree = self.fetch_html(new_url)
             tree = self.fetch_html(next_page)
-        adstr = """style_tp();
 
-
-
-
-
-(adsbygoogle = window.adsbygoogle || []).push({});
-
-
-
-
-    """
-        contents = contents.replace(adstr, "")
-        return contents
+        return "\n".join(contents)
 
     def save_catalog(self):
         try:
-            with open(f".{self.novel_id}.log", "w", encoding="utf-8") as f:
+            with open(f".{self.novel_id}.log.json", "w", encoding="utf-8") as f:
                 json.dump(self.catalog, f)
             print("章节信息保存成功.")
         except Exception as e:
             print(f"章节信息保存失败: {e}")
 
     def load_catalog(self):
-        if os.path.exists(f".{self.novel_id}.log") and os.path.exists(
+        if os.path.exists(f".{self.novel_id}.log.json") and os.path.exists(
             self.sava_filename
         ):
             try:
-                with open(f".{self.novel_id}.log", "r", encoding="utf-8") as f:
+                with open(f".{self.novel_id}.log.json", "r", encoding="utf-8") as f:
                     self.catalog = json.load(f)
                 print(f"章节信息已读取.")
                 return
@@ -164,7 +176,7 @@ class LinovelibCrawler:
 
     def delete_catalog(self):
         try:
-            os.remove(f".{self.novel_id}.log")
+            os.remove(f".{self.novel_id}.log.json")
         except Exception as e:
             print(f"章节信息删除失败: {e}")
 
@@ -203,7 +215,7 @@ class LinovelibCrawler:
 
                 chapter_link = chapter["link"]
                 content_html = self.fetch_html(chapter_link)
-                content = self.parse_content(content_html)
+                content = self.parse_chapter(content_html)
                 with open(self.sava_filename, "a", encoding="utf-8") as f:
                     f.write(f"{content}\n\n")
                 chapter["status"] = "completed"
@@ -221,7 +233,6 @@ if __name__ == "__main__":
     crawler = LinovelibCrawler(novel_id)
     crawler.download()
 
-# <script>;eval(function(p,a,c,k,e,r){e=function(c){return c.toString(a)};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('b 3=c d();3.e(`@0-f{0-4:1;0-g:h;i:5(\'/6/0/1.7\')8(\'7\'),5(\'/6/0/1.j\')8(\'k\')}#l p:m-n-o-q(2){0-4:"1"!r}`);9.a=[...9.a,3];',28,28,'font|read||sheet|family|url|public|woff2|format|document|adoptedStyleSheets|const|new|CSSStyleSheet|replaceSync|face|display|block|src|ttf|truetype|TextContent|nth|last|of||type|important'.split('|'),0,{}));</script><!--<script async src='/scripts/code.min.js?0128b5'></script>-->
 
 # const sheet = new CSSStyleSheet();
 # sheet.replaceSync(
@@ -239,4 +250,3 @@ if __name__ == "__main__":
 # }
 
 # MI LANTING_GB OUTSIDE YS · Regular · Version 2.3.3;GB Outside YS Regular · 共 37442 个字符形
-# 怎么解决这个字体问题呢？
