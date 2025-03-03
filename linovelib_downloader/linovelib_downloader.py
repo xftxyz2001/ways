@@ -1,5 +1,6 @@
 import json
 import os
+import re
 import time
 
 import ddddocr
@@ -13,6 +14,7 @@ from selenium.webdriver.edge.options import Options
 class LinovelibCrawler:
 
     def start_edge(self):
+        print("正在启动Edge浏览器...")
         options = Options()
         options.add_argument("--headless")
         options.add_argument("--disable-gpu")
@@ -21,6 +23,7 @@ class LinovelibCrawler:
 
     # 初始化
     def __init__(self, novel_id):
+        print("正在初始化...")
         self.novel_id = novel_id
         self.sava_filename = f"{novel_id}.md"
 
@@ -54,18 +57,25 @@ class LinovelibCrawler:
             time.sleep(time_since_last_request)
         self.last_request_time = time.time()
 
-        for attempt in range(self.max_retry):
+        for attempt in range(max(self.max_retry, 3)):
             try:
                 print(f"请求页面: {url}")
                 # response = self.session.get(url, headers=self.headers)
                 # response.raise_for_status()
                 # return etree.HTML(response.text)
 
-                self.driver.get(url)
+                if attempt == 1:  # 第二次重试，刷新
+                    self.driver.refresh()
+                else:
+                    self.driver.get(url)
                 time.sleep(self.wait_time)  # 等待，以便页面加载完全
 
                 page_source = self.driver.page_source
                 if "（內容加載失敗！請刷新或更換瀏覽器）" in page_source:
+                    with open(
+                        f".page_source-{time.time()}.html", "w", encoding="utf-8"
+                    ) as f:
+                        f.write(page_source)
                     if self.wait_time < self.max_wait_time:
                         self.wait_time *= 2
                     raise Exception("页面加载失败，请刷新或更换浏览器")
@@ -125,16 +135,15 @@ class LinovelibCrawler:
             volume_list.append(volume)
         self.catalog = volume_list
 
-        # 解码文本
-
+    # 解码文本
     def decode_text(self, text):
         font_path = "./read.woff2"
-        # if not os.path.exists(font_path):
-        #     print("正在下载字体文件...")
-        #     font_url = "https://www.linovelib.com/public/font/read.woff2"
-        #     with open(font_path, "wb") as f:
-        #         f.write(requests.get(font_url).content)
-        #     print("字体文件下载完成！")
+        if not os.path.exists(font_path):
+            print("正在下载字体文件...")
+            font_url = self.base_url + "/public/font/read.woff2"
+            with open(font_path, "wb") as f:
+                f.write(requests.get(font_url).content)
+            print("字体文件下载完成！")
 
         img_size = 1024
         img = Image.new("1", (img_size * len(text), img_size), 255)
@@ -270,6 +279,10 @@ class LinovelibCrawler:
 
 
 if __name__ == "__main__":
-    novel_id = 4515
+    input_id = input(
+        "请输入小说ID或粘贴网址\neg.(1)4521\n   (2)https://www.linovelib.com/novel/4521.html\n   (3)https://www.linovelib.com/novel/4521/catalog\n>>>"
+    )
+    novel_id = re.findall(r"\d+", input_id)[0]
+    print(f"小说ID已获取: {novel_id}")
     crawler = LinovelibCrawler(novel_id)
     crawler.download()
