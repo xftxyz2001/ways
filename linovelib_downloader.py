@@ -2,8 +2,10 @@ import json
 import os
 import time
 
+import ddddocr
 import requests
 from lxml import etree
+from PIL import Image, ImageDraw, ImageFont
 from selenium import webdriver
 from selenium.webdriver.edge.options import Options
 
@@ -15,6 +17,7 @@ class LinovelibCrawler:
         options.add_argument("--headless")
         options.add_argument("--disable-gpu")
         self.driver = webdriver.Edge(options=options)
+        time.sleep(2)
 
     # 初始化
     def __init__(self, novel_id):
@@ -27,9 +30,16 @@ class LinovelibCrawler:
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36 Edg/133.0.0.0"
         }
         self.min_request_interval = 2  # 两次请求的最小间隔
+        self.max_request_interval = 10
         self.request_interval = self.min_request_interval
         self.last_request_time = time.time() - self.min_request_interval
-        self.max_retry = 3  # 最大重试次数
+        self.max_retry = 5  # 最大重试次数
+
+        self.min_wait_time = 2
+        self.max_wait_time = 10
+        self.wait_time = self.min_wait_time
+
+        self.ocr = ddddocr.DdddOcr(beta=True, show_ad=False)
 
         self.start_edge()
 
@@ -41,7 +51,7 @@ class LinovelibCrawler:
         # 距离上次请求时间的时间
         time_since_last_request = time.time() - self.last_request_time
         if time_since_last_request < self.request_interval:
-            time.sleep(self.request_interval - time_since_last_request)
+            time.sleep(time_since_last_request)
         self.last_request_time = time.time()
 
         for attempt in range(self.max_retry):
@@ -52,18 +62,31 @@ class LinovelibCrawler:
                 # return etree.HTML(response.text)
 
                 self.driver.get(url)
-                time.sleep(self.request_interval)  # 等待，以便页面加载完全
-                return etree.HTML(self.driver.page_source)
-            # （內容加載失敗！請刷新或更換瀏覽器）
+                time.sleep(self.wait_time)  # 等待，以便页面加载完全
+
+                page_source = self.driver.page_source
+                if "（內容加載失敗！請刷新或更換瀏覽器）" in page_source:
+                    if self.wait_time < self.max_wait_time:
+                        self.wait_time *= 2
+                    raise Exception("页面加载失败，请刷新或更换浏览器")
+
+                self.wait_time = self.min_wait_time
+                self.request_interval = self.min_request_interval
+                return etree.HTML(page_source)
             except Exception as e:
                 print(f"请求页面失败: {e}")
-                if self.request_interval < 10:
+                if self.request_interval < self.max_request_interval:
                     self.request_interval *= 2
-                if attempt < 2:
+
+                if attempt <= self.max_retry // 2:  # 前三次
                     print(f"将在 {self.request_interval} 秒后重试...")
-                else:
-                    print("已达到最大重试次数，程序即将退出...")
-                    exit()
+                    continue
+
+                self.driver.quit()
+                self.start_edge()
+
+        print("已达到最大重试次数，程序即将退出...")
+        exit()
 
     # 解析章节
     def parse_catalog(self, tree):
@@ -102,6 +125,24 @@ class LinovelibCrawler:
             volume_list.append(volume)
         self.catalog = volume_list
 
+        # 解码文本
+
+    def decode_text(self, text):
+        font_path = "./read.woff2"
+        # if not os.path.exists(font_path):
+        #     print("正在下载字体文件...")
+        #     font_url = "https://www.linovelib.com/public/font/read.woff2"
+        #     with open(font_path, "wb") as f:
+        #         f.write(requests.get(font_url).content)
+        #     print("字体文件下载完成！")
+
+        img_size = 1024
+        img = Image.new("1", (img_size * len(text), img_size), 255)
+        draw = ImageDraw.Draw(img)
+        font = ImageFont.truetype(font_path, img_size)
+        draw.text((0, -200), text, font=font)
+        return self.ocr.classification(img)
+
     # 解析一页小说
     def parse_page(self, tree):
         # 检查是否有字体样式加密，并记录加密的p
@@ -111,7 +152,7 @@ class LinovelibCrawler:
             # 获取#TextContent p:nth-last-of-type(2)
             # p_last2 = tree.xpath('//div[@id="TextContent"]/p[last()-1]')[0]
             p_last2 = tree.xpath('//div[@id="TextContent"]/p')[-2]
-            content_of_p_last2 = ""
+            content_of_p_last2 = self.decode_text("".join(p_last2.xpath("text()")))
 
         contents = []
         # 处理TextContent中的p br img标签
@@ -232,21 +273,3 @@ if __name__ == "__main__":
     novel_id = 4515
     crawler = LinovelibCrawler(novel_id)
     crawler.download()
-
-
-# const sheet = new CSSStyleSheet();
-# sheet.replaceSync(
-#   `@font-face{font-family:read;font-display:block;src:url(\'/public/font/read.woff2\')format(\'woff2\'),url(\'/public/font/read.ttf\')format(\'truetype\')}#TextContent p:nth-last-of-type(2){font-family:"read"!important}`
-# );
-# document.adoptedStyleSheets = [...document.adoptedStyleSheets, sheet];
-
-# @font-face {
-#   font-family: read;
-#   font-display: block;
-#   src: url('/public/font/read.woff2')format('woff2'),url('/public/font/read.ttf')format('truetype');
-# }
-# #TextContent p:nth-last-of-type(2) {
-#   font-family: "read" !important;
-# }
-
-# MI LANTING_GB OUTSIDE YS · Regular · Version 2.3.3;GB Outside YS Regular · 共 37442 个字符形
