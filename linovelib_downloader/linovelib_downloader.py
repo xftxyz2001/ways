@@ -18,6 +18,9 @@ class LinovelibCrawler:
         options = Options()
         options.add_argument("--headless")
         options.add_argument("--disable-gpu")
+        # 设置日志等级 INFO = 0 WARNING = 1 LOG_ERROR = 2 LOG_FATAL = 3 default is 0
+        # options.add_argument("log-level=3")
+        # options.add_experimental_option("excludeSwitches", ["enable-automation"])
         self.driver = webdriver.Edge(options=options)
         time.sleep(2)
 
@@ -284,5 +287,9 @@ if __name__ == "__main__":
     )
     novel_id = re.findall(r"\d+", input_id)[0]
     print(f"小说ID已获取: {novel_id}")
-    crawler = LinovelibCrawler(novel_id)
-    crawler.download()
+    try:
+        crawler = LinovelibCrawler(novel_id)
+        crawler.download()
+    except Exception as e:
+        print(f"出错了: {e}")
+        input("按任意键退出...")
