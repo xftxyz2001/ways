@@ -1,387 +1,297 @@
 {
-    "common": {
-        "audioFx": {
-            "delay": 0,
-            "eq": {
-                "enabled": false,
-                "factor": 1,
-                "values": [
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                    0
-                ]
-            },
-            "pitch": 0,
-            "volume": 1
-        },
-        "backdropFx": {
-            "filters": [
-                {
-                    "name": "sepia",
-                    "value": 0
-                },
-                {
-                    "name": "hueRotate",
-                    "value": 0
-                },
-                {
-                    "name": "grayscale",
-                    "value": 0
-                },
-                {
-                    "name": "contrast",
-                    "value": 1
-                },
-                {
-                    "name": "brightness",
-                    "value": 1
-                },
-                {
-                    "name": "saturate",
-                    "value": 1
-                },
-                {
-                    "name": "invert",
-                    "value": 0
-                },
-                {
-                    "name": "blur",
-                    "value": 0
-                },
-                {
-                    "name": "opacity",
-                    "value": 1
-                }
-            ],
-            "transforms": [
-                {
-                    "name": "scaleX",
-                    "value": 1
-                },
-                {
-                    "name": "scaleY",
-                    "value": 1
-                },
-                {
-                    "name": "translateX",
-                    "value": 0
-                },
-                {
-                    "name": "translateY",
-                    "value": 0
-                },
-                {
-                    "name": "rotateX",
-                    "value": 0
-                },
-                {
-                    "name": "rotateY",
-                    "value": 0
-                },
-                {
-                    "name": "rotateZ",
-                    "value": 0
-                }
-            ]
-        },
-        "elementFx": {
-            "filters": [
-                {
-                    "name": "sepia",
-                    "value": 0
-                },
-                {
-                    "name": "hueRotate",
-                    "value": 0
-                },
-                {
-                    "name": "grayscale",
-                    "value": 0
-                },
-                {
-                    "name": "contrast",
-                    "value": 1
-                },
-                {
-                    "name": "brightness",
-                    "value": 1
-                },
-                {
-                    "name": "saturate",
-                    "value": 1
-                },
-                {
-                    "name": "invert",
-                    "value": 0
-                },
-                {
-                    "name": "blur",
-                    "value": 0
-                },
-                {
-                    "name": "opacity",
-                    "value": 1
-                }
-            ],
-            "transforms": [
-                {
-                    "name": "scaleX",
-                    "value": 1
-                },
-                {
-                    "name": "scaleY",
-                    "value": 1
-                },
-                {
-                    "name": "translateX",
-                    "value": 0
-                },
-                {
-                    "name": "translateY",
-                    "value": 0
-                },
-                {
-                    "name": "rotateX",
-                    "value": 0
-                },
-                {
-                    "name": "rotateY",
-                    "value": 0
-                },
-                {
-                    "name": "rotateZ",
-                    "value": 0
-                }
-            ]
-        },
-        "enabled": true,
-        "speed": 1
+  "audioFx": {
+    "delay": 0,
+    "eq": {
+      "enabled": false,
+      "factor": 1,
+      "values": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     },
-    "darkTheme": true,
-    "firstUse": 1685777233885,
-    "hideBadge": false,
-    "hideMediaView": null,
-    "keybinds": [
-        {
-            "adjustMode": 1,
-            "command": "adjustSpeed",
-            "enabled": true,
-            "greedy": true,
-            "id": "5326826691",
-            "key": {
-                "altKey": false,
-                "code": "KeyZ",
-                "ctrlKey": false,
-                "metaKey": false,
-                "shiftKey": false
-            },
-            "spacing": 0,
-            "valueNumber": 1
-        },
-        {
-            "adjustMode": 2,
-            "command": "adjustSpeed",
-            "enabled": true,
-            "greedy": true,
-            "id": "4382496732",
-            "key": {
-                "altKey": false,
-                "code": "KeyX",
-                "ctrlKey": false,
-                "metaKey": false,
-                "shiftKey": false
-            },
-            "valueNumberAlt": -0.1
-        },
-        {
-            "adjustMode": 2,
-            "command": "adjustSpeed",
-            "enabled": true,
-            "greedy": true,
-            "id": "6419489814",
-            "key": {
-                "altKey": false,
-                "code": "KeyC",
-                "ctrlKey": false,
-                "metaKey": false,
-                "shiftKey": false
-            },
-            "spacing": 1,
-            "valueNumberAlt": 0.1
-        },
-        {
-            "command": "setPin",
-            "enabled": false,
-            "greedy": true,
-            "id": "4187088345",
-            "key": "KeyQ",
-            "valueState": "toggle"
-        },
-        {
-            "command": "setState",
-            "enabled": false,
-            "greedy": true,
-            "id": "1179942868",
-            "key": {
-                "code": "KeyQ",
-                "shiftKey": true
-            },
-            "spacing": 2,
-            "valueState": "toggle"
-        },
-        {
-            "command": "seek",
-            "enabled": true,
-            "greedy": true,
-            "id": "4867609784",
-            "key": {
-                "altKey": false,
-                "code": "KeyA",
-                "ctrlKey": false,
-                "metaKey": false,
-                "shiftKey": false
-            },
-            "valueNumber": -5
-        },
-        {
-            "command": "seek",
-            "enabled": true,
-            "greedy": true,
-            "id": "3755036605",
-            "key": {
-                "altKey": false,
-                "code": "KeyD",
-                "ctrlKey": false,
-                "metaKey": false,
-                "shiftKey": false
-            },
-            "spacing": 1,
-            "valueNumber": 10
-        },
-        {
-            "command": "seek",
-            "enabled": true,
-            "greedy": true,
-            "id": "6491765653",
-            "key": {
-                "altKey": false,
-                "code": "KeyA",
-                "ctrlKey": false,
-                "metaKey": false,
-                "shiftKey": true
-            },
-            "valueBool3": true,
-            "valueNumber": -0.041
-        },
-        {
-            "command": "seek",
-            "enabled": true,
-            "greedy": true,
-            "id": "8308844654",
-            "key": {
-                "altKey": false,
-                "code": "KeyD",
-                "ctrlKey": false,
-                "metaKey": false,
-                "shiftKey": true
-            },
-            "spacing": 1,
-            "valueBool3": true,
-            "valueNumber": 0.041
-        },
-        {
-            "command": "fullscreen",
-            "enabled": true,
-            "greedy": true,
-            "id": "6752238118",
-            "key": {
-                "code": "KeyF",
-                "shiftKey": true
-            },
-            "spacing": 2,
-            "valueBool": true
-        },
-        {
-            "command": "setMark",
-            "enabled": true,
-            "greedy": true,
-            "id": "5925171300",
-            "key": {
-                "ctrlKey": false,
-                "altKey": false,
-                "shiftKey": false,
-                "metaKey": false,
-                "code": "KeyW"
-            },
-            "valueString": "mark1"
-        },
-        {
-            "command": "seekMark",
-            "enabled": true,
-            "greedy": true,
-            "id": "5284362716",
-            "key": {
-                "ctrlKey": false,
-                "altKey": false,
-                "shiftKey": true,
-                "metaKey": false,
-                "code": "KeyW"
-            },
-            "valueString": "mark1"
-        },
-        {
-            "command": "toggleLoop",
-            "enabled": true,
-            "greedy": true,
-            "id": "8656624321",
-            "key": "KeyR",
-            "spacing": 2,
-            "valueString": "mark1"
-        },
-        {
-            "adjustMode": 3,
-            "command": "adjustFilter",
-            "enabled": false,
-            "filterOption": "invert",
-            "filterTarget": "both",
-            "greedy": true,
-            "id": "6866337011",
-            "key": {
-                "code": "KeyE"
-            },
-            "valueCycle": [
-                0,
-                1
-            ]
-        },
-        {
-            "adjustMode": 3,
-            "command": "adjustFilter",
-            "enabled": false,
-            "filterOption": "grayscale",
-            "filterTarget": "backdrop",
-            "greedy": true,
-            "id": "1174293069",
-            "key": {
-                "code": "KeyE",
-                "shiftKey": true
-            },
-            "spacing": 2,
-            "valueCycle": [
-                0,
-                1
-            ]
-        }
-    ],
-    "language": "zh_CN",
-    "pinByDefault": true,
-    "speedPresetPadding": 0,
-    "version": 10
+    "pitch": 0,
+    "volume": 1
+  },
+  "darkTheme": true,
+  "enabled": true,
+  "firstUse": 1741329656004,
+  "freshKeybinds": false,
+  "initialContext": 3,
+  "keybinds": [
+    {
+      "adjustMode": 2,
+      "command": "speed",
+      "enabled": true,
+      "greedy": true,
+      "id": "6915901619",
+      "key": {
+        "altKey": false,
+        "code": "KeyX",
+        "ctrlKey": false,
+        "metaKey": false,
+        "shiftKey": false
+      },
+      "valueNumber": -0.1
+    },
+    {
+      "command": "speed",
+      "enabled": true,
+      "greedy": true,
+      "id": "1665255926",
+      "key": {
+        "altKey": false,
+        "code": "KeyZ",
+        "ctrlKey": false,
+        "metaKey": false,
+        "shiftKey": false
+      },
+      "valueNumber": 1
+    },
+    {
+      "adjustMode": 2,
+      "command": "speed",
+      "enabled": true,
+      "greedy": true,
+      "id": "7553009219",
+      "key": {
+        "altKey": false,
+        "code": "KeyC",
+        "ctrlKey": false,
+        "metaKey": false,
+        "shiftKey": false
+      },
+      "spacing": 1,
+      "valueNumber": 0.1
+    },
+    {
+      "command": "pin",
+      "enabled": false,
+      "greedy": true,
+      "id": "3109414151",
+      "key": "KeyQ",
+      "valueState": "toggle"
+    },
+    {
+      "command": "state",
+      "enabled": false,
+      "greedy": true,
+      "id": "8926475543",
+      "key": { "code": "KeyQ", "shiftKey": true },
+      "spacing": 2,
+      "valueState": "toggle"
+    },
+    {
+      "adjustMode": 2,
+      "command": "seek",
+      "enabled": true,
+      "greedy": true,
+      "id": "8184631442",
+      "key": {
+        "altKey": false,
+        "code": "KeyA",
+        "ctrlKey": false,
+        "metaKey": false,
+        "shiftKey": false
+      },
+      "valueNumber": -5
+    },
+    {
+      "adjustMode": 2,
+      "command": "seek",
+      "enabled": true,
+      "greedy": true,
+      "id": "4225444017",
+      "key": {
+        "altKey": false,
+        "code": "KeyD",
+        "ctrlKey": false,
+        "metaKey": false,
+        "shiftKey": false
+      },
+      "spacing": 1,
+      "valueNumber": 10
+    },
+    {
+      "adjustMode": 2,
+      "command": "seek",
+      "duration": 2,
+      "enabled": true,
+      "greedy": true,
+      "id": "2141856605",
+      "key": {
+        "altKey": false,
+        "code": "KeyA",
+        "ctrlKey": false,
+        "metaKey": false,
+        "shiftKey": true
+      },
+      "valueNumber": -1
+    },
+    {
+      "adjustMode": 2,
+      "command": "seek",
+      "duration": 2,
+      "enabled": true,
+      "greedy": true,
+      "id": "8044446219",
+      "key": {
+        "altKey": false,
+        "code": "KeyD",
+        "ctrlKey": false,
+        "metaKey": false,
+        "shiftKey": true
+      },
+      "spacing": 1,
+      "valueNumber": 1
+    },
+    {
+      "command": "fullscreen",
+      "direct": true,
+      "enabled": true,
+      "greedy": true,
+      "id": "4301868179",
+      "key": { "code": "KeyF", "shiftKey": true }
+    },
+    {
+      "adjustMode": 4,
+      "command": "seek",
+      "duration": 3,
+      "enabled": false,
+      "greedy": true,
+      "id": "5750828018",
+      "key": { "code": "Backquote" },
+      "spacing": 1,
+      "valueNumber": 10
+    },
+    {
+      "command": "setMark",
+      "enabled": true,
+      "greedy": true,
+      "id": "9873251924",
+      "key": { "code": "KeyW", "shiftKey": true },
+      "valueString": "mark1"
+    },
+    {
+      "command": "seekMark",
+      "enabled": true,
+      "greedy": true,
+      "id": "1987866597",
+      "key": "KeyW",
+      "valueString": "mark1"
+    },
+    {
+      "command": "loop",
+      "enabled": true,
+      "greedy": true,
+      "id": "190632096",
+      "key": "KeyR",
+      "spacing": 2,
+      "valueString": "mark1"
+    },
+    {
+      "command": "drawPage",
+      "contextLabel": "在页面上画",
+      "enabled": false,
+      "greedy": true,
+      "id": "4477293811",
+      "trigger": 2
+    },
+    {
+      "command": "cinema",
+      "contextLabel": "加深背景",
+      "enabled": false,
+      "greedy": true,
+      "id": "5990571898",
+      "trigger": 2,
+      "valueState": "toggle"
+    },
+    {
+      "adjustMode": 3,
+      "command": "fxFilter",
+      "contextLabel": "fx :: 反转页面",
+      "enabled": false,
+      "filterOption": "invert",
+      "filterTarget": "both",
+      "greedy": true,
+      "id": "5211335936",
+      "trigger": 2,
+      "valueCycle": [0, 1]
+    },
+    {
+      "adjustMode": 4,
+      "command": "fxFilter",
+      "contextLabel": "fx :: 灰度页面",
+      "enabled": false,
+      "filterOption": "grayscale",
+      "filterTarget": "backdrop",
+      "greedy": true,
+      "id": "1198416961",
+      "trigger": 2,
+      "valueItcMax": 1,
+      "valueItcMin": 0
+    },
+    {
+      "adjustMode": 4,
+      "command": "fxFilter",
+      "contextLabel": "fx :: 视频亮度",
+      "enabled": false,
+      "filterOption": "brightness",
+      "filterTarget": "element",
+      "greedy": true,
+      "id": "1849957354",
+      "trigger": 2,
+      "valueItcMax": 2,
+      "valueItcMin": 0.5
+    },
+    {
+      "adjustMode": 4,
+      "command": "fxFilter",
+      "contextLabel": "fx :: 视频对比度",
+      "enabled": false,
+      "filterOption": "contrast",
+      "filterTarget": "element",
+      "greedy": true,
+      "id": "7741278373",
+      "trigger": 2,
+      "valueItcMax": 1.25,
+      "valueItcMin": 0.75
+    },
+    {
+      "command": "fxReset",
+      "contextLabel": "fx :: 重置",
+      "enabled": false,
+      "filterTarget": "both",
+      "greedy": true,
+      "id": "6589531013",
+      "trigger": 2
+    },
+    {
+      "adjustMode": 4,
+      "command": "afxPitch",
+      "contextLabel": "音高",
+      "enabled": false,
+      "greedy": true,
+      "id": "4867621745",
+      "trigger": 2
+    },
+    {
+      "adjustMode": 4,
+      "command": "afxGain",
+      "contextLabel": "增益",
+      "enabled": false,
+      "greedy": true,
+      "id": "2124945980",
+      "trigger": 2
+    },
+    {
+      "command": "afxReset",
+      "contextLabel": "音频重置",
+      "enabled": false,
+      "greedy": true,
+      "id": "1008464486",
+      "spacing": 2,
+      "trigger": 2
+    }
+  ],
+  "language": "zh_CN",
+  "pinByDefault": true,
+  "speed": 1,
+  "version": 12
 }
