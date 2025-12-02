@@ -1,0 +1,57 @@
+{
+  "files.autoSave": "afterDelay",
+  "files.autoGuessEncoding": true,
+  "editor.autoClosingBrackets": "beforeWhitespace",
+  "editor.fontSize": 18,
+  "editor.formatOnType": true,
+  "editor.guides.bracketPairs": true,
+  "editor.inlineSuggest.enabled": true,
+  "editor.linkedEditing": true,
+  "editor.stickyScroll.enabled": false,
+  "window.commandCenter": false,
+  "window.dialogStyle": "custom",
+  "terminal.integrated.fontFamily": "MesloLGM NF",
+  "terminal.integrated.shellIntegration.enabled": false,
+  "workbench.tree.enableStickyScroll": false,
+  "workbench.layoutControl.enabled": false,
+  "workbench.editor.wrapTabs": true,
+  "workbench.startupEditor": "none",
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.editorAssociations": {
+    "*.md": "default",
+    "*.csv": "default"
+  },
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  "git.openRepositoryInParentFolders": "always",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "notebook.lineNumbers": "on",
+  "markdown-preview-enhanced.chromePath": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+  "diffEditor.hideUnchangedRegions.enabled": true,
+  "terminal.integrated.commandsToSkipShell": ["matlab.interrupt"],
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "Lingma.aI Chat.mcpToolsInAgentMode": true,
+  "Lingma.aI Chat.webToolsInAsk/AgentMode": "Auto-execute",
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+  }
+}
