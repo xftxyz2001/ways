@@ -7,10 +7,12 @@
 下一步下一步即可，**将VSCode添加到资源管理器上下文菜单可以方便以后使用**：
 ![1764685060910](image/安装VSCode1.106/1764685060910.jpg)
 
+[VSCode使用一段时间后会占用大量C盘空间](./清理VSCode缓存.md)，可以使用 [CleanVSCode.bat](./CleanVSCode.bat) 脚本清理，为方便使用，可以将其置于 `~/.vscode/` 下。
 
-**VSCode现在可以登录Github账号保存设置和扩展，本文件提供个人目前的一些设置，不会及时更新。**
 
 ---
+**VSCode现在可以登录Github账号保存设置和扩展，本文件提供个人目前的一些设置，不会及时更新。（我的意思是说下面或许不用看了）**
+
 ## 配置
 [VSCodeUserSettings.json](./VSCodeUserSettings.json)
 
