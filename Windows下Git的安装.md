@@ -68,7 +68,7 @@ git config --global user.email 邮箱
 
 ```shell
 git config --global user.name "通晓宇宙"
-git config --global user.email "2581011320@qq.com
+git config --global user.email "2581011320@qq.com"
 ```
 
 说明：
