@@ -18,5 +18,14 @@ Set-PSReadLineKeyHandler -Key DownArrow -ScriptBlock {
 
 # auto suggestions
 Import-Module PSReadLine
-Set-PSReadLineOption -PredictionSource HistoryAndPlugin
-Set-PSReadLineOption -PredictionViewStyle ListView
+$supportsVirtualTerminal = $null -ne $Host.UI.PSObject.Properties['SupportsVirtualTerminal'] -and
+    $Host.UI.SupportsVirtualTerminal
+$canShowPredictions = $Host.Name -eq 'ConsoleHost' -and
+    -not [Console]::IsInputRedirected -and
+    -not [Console]::IsOutputRedirected -and
+    $supportsVirtualTerminal
+
+if ($canShowPredictions) {
+    Set-PSReadLineOption -PredictionSource HistoryAndPlugin
+    Set-PSReadLineOption -PredictionViewStyle ListView
+}

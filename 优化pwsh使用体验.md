@@ -55,6 +55,8 @@ code $PROFILE
 
 [profile](./Microsoft.PowerShell_profile.ps1)
 
+配置中的命令预测功能只会在支持虚拟终端的交互式控制台中启用；当输入或输出被重定向时会自动跳过，避免 `PSReadLine` 输出终端能力警告。
+
 
 # 参考
 - https://github.com/JanDeDobbeleer/oh-my-posh2#installation
