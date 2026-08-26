@@ -1,57 +1,101 @@
 {
-  "files.autoSave": "afterDelay",
-  "files.autoGuessEncoding": true,
   "editor.autoClosingBrackets": "beforeWhitespace",
+  "editor.guides.bracketPairs": true,
+  "editor.largeFileOptimizations": false,
+  "editor.linkedEditing": true,
   "editor.fontSize": 18,
   "editor.formatOnType": true,
-  "editor.guides.bracketPairs": true,
-  "editor.inlineSuggest.enabled": true,
-  "editor.linkedEditing": true,
-  "editor.stickyScroll.enabled": false,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "files.autoGuessEncoding": true,
+  "files.autoSave": "afterDelay",
+  "workbench.editorAssociations": {
+    "*.copilotmd": "vscode.markdown.preview.editor",
+    "*.md": "default",
+    "*.svg": "imagePreview.previewEditor",
+  },
+  "workbench.layoutControl.enabled": false,
+  "workbench.experimental.modernUI": false,
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+  "workbench.startupEditor": "none",
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.editor.wrapTabs": true,
   "window.commandCenter": false,
   "window.dialogStyle": "custom",
+  "chat.viewSessions.orientation": "stacked",
+  "chatgpt.localeOverride": "zh-CN",
+  "python.createEnvironment.trigger": "off",
+  "python.analysis.typeCheckingMode": "basic",
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
   "terminal.integrated.fontFamily": "MesloLGM NF",
-  "terminal.integrated.shellIntegration.enabled": false,
-  "workbench.tree.enableStickyScroll": false,
-  "workbench.layoutControl.enabled": false,
-  "workbench.editor.wrapTabs": true,
-  "workbench.startupEditor": "none",
-  "workbench.secondarySideBar.defaultVisibility": "hidden",
-  "workbench.iconTheme": "vscode-icons",
-  "workbench.editorAssociations": {
-    "*.md": "default",
-    "*.csv": "default"
+  "terminal.integrated.fontSize": 18,
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell",
+      "path": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    },
+    "Command Prompt": {
+      "path": [
+        "${env:windir}\\Sysnative\\cmd.exe",
+        "${env:windir}\\System32\\cmd.exe",
+      ],
+      "args": [],
+      "icon": "terminal-cmd",
+    },
+    "Git Bash": {
+      "path": "C:\\Program Files\\Git\\bin\\bash.exe",
+      "args": ["--login", "-i"],
+    },
   },
+  "notebook.lineNumbers": "on",
+  "git.autofetch": true,
   "git.confirmSync": false,
   "git.enableSmartCommit": true,
   "git.openRepositoryInParentFolders": "always",
-  "diffEditor.ignoreTrimWhitespace": false,
-  "notebook.lineNumbers": "on",
+  "git-graph.date.format": "ISO Date & Time",
+  "js/ts.updateImportsOnFileMove.enabled": "always",
+  "liveServer.settings.donotShowInfoMsg": true,
+  "hediet.vscode-drawio.resizeImages": null,
   "markdown-preview-enhanced.chromePath": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
-  "diffEditor.hideUnchangedRegions.enabled": true,
-  "terminal.integrated.commandsToSkipShell": ["matlab.interrupt"],
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "Lingma.aI Chat.mcpToolsInAgentMode": true,
-  "Lingma.aI Chat.webToolsInAsk/AgentMode": "Auto-execute",
+  "markdown-preview-enhanced.enablePreviewZenMode": false,
+  "markdown-preview-enhanced.plantumlJarPath": "C:\\Users\\25810\\soft\\plantuml-1.2026.6.jar",
+  "markdown-preview-enhanced.liveUpdateDebounceMs": 1000,
   "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.html-language-features",
   },
   "[vue]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[markdown]": {
-    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
-  }
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one",
+  },
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "terminal.integrated.allowedLinkSchemes": [
+    "file",
+    "http",
+    "https",
+    "mailto",
+    "vscode",
+    "vscode-insiders",
+    "ms-settings",
+  ],
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false,
+  },
+  "diffEditor.hideUnchangedRegions.enabled": true,
 }
