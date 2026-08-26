@@ -5,6 +5,7 @@
 ## 脚本（补丁）
 - [GitHub](https://github.com/LiJunYi2/navicat-keygen-16V)
 - [GitLab](https://gitlab.com/ajiajishu/navicat-keygen-16V)
+- [本仓库脚本](./navicat.bat)
 
 > [整合下载](https://txyz.lanzouw.com/ihgWK1wf0ecf) 密码:94cf
 

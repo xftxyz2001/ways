@@ -42,8 +42,22 @@
 2. Path: `%CATALINA_HOME%\bin` 和 `%CATALINA_HOME%\lib`
 
 
+### 3. 注册为Windows服务（可选）
+项目在Tomcat中运行时，通常需要进入 `bin` 目录运行 `startup.bat`。如果希望设置为开机自启动，或直接通过系统服务启停Tomcat，可以将其注册为Windows服务。
+
+注册前需保证JDK和Tomcat的位数一致，否则可能出现“Windows不能在本地计算机启动Apache Tomcat”的错误。
+
+在Tomcat的 `bin` 目录打开命令行，执行：
+
+```shell
+service.bat install Tomcat
+```
+
+其中 `Tomcat` 是服务名，可以省略并使用默认名称。注册后可通过 `net start Tomcat` 启动服务。
+
+
 ## 三、启动Tomcat
-进入Tomcat解压路径下的bin目录，双击startup.bat启动Tomcat。
+进入Tomcat解压路径下的 `bin` 目录，双击 `startup.bat` 启动Tomcat；如果已注册为Windows服务，也可以执行 `net start Tomcat`。
 
 在未更改Tomcat端口配置的情况下，若能在浏览器访问如下地址看到欢迎页，即代表Tomcat安装成功！ [http://localhost:8080](http://localhost:8080)
 

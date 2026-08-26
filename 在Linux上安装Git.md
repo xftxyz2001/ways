@@ -77,3 +77,49 @@ RHEL 及其衍生产品通常会提供 git 的较旧版本。您可以下载 [ta
 ```bash
 $ tazpkg get-install git
 ```
+
+## 从源码安装（以2.44.0版本为例）
+
+### 1. 下载源码并解压
+
+```shell
+wget https://www.kernel.org/pub/software/scm/git/git-2.44.0.tar.gz
+tar -zxvf git-2.44.0.tar.gz
+cd git-2.44.0
+```
+
+### 2. 安装到 `/usr/local`
+
+```shell
+make prefix=/usr/local all
+sudo make prefix=/usr/local install
+```
+
+### 3. 安装Git文档（可选）
+
+```shell
+make prefix=/usr/local doc info
+sudo make prefix=/usr/local install-doc install-html install-info
+```
+
+### 4. 配置命令补齐（可选）
+
+```shell
+cp contrib/completion/git-completion.bash /etc/bash_completion.d/
+. /etc/bash_completion
+```
+
+为了在终端启动时自动加载命令补齐，可在本地配置文件 `~/.bash_profile` 或全局文件 `/etc/bashrc` 中添加：
+
+```shell
+if [ -f /etc/bash_completion ]; then
+  . /etc/bash_completion
+fi
+```
+
+## 参考
+
+- [Git官网](https://git-scm.com/)
+- [Git下载页](https://git-scm.com/downloads)
+- [Git源码包](https://www.kernel.org/pub/software/scm/git/)
+- [Git源码包镜像](https://mirrors.edge.kernel.org/pub/software/scm/git/)
