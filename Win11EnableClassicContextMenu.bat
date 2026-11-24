@@ -1,3 +1,4 @@
 @REM 启用经典右键菜单
 reg add "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32" /f /ve
+reg add "HKCU\Software\Classes\CLSID\{51668040-5e31-4023-bbe3-149163bd80f1}\InprocServer32" /ve /f
 taskkill /f /im explorer.exe & start explorer.exe
